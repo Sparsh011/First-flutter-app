@@ -12,8 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Mera app hai ji",
-      home: new HomePage(
-
+      home: const HomePage(),
+      theme: ThemeData(
+        primaryColor: Colors.pink,
+        brightness: Brightness.light,
+          // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.blue)
       )
     );
   }
@@ -37,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text(text, style: const TextStyle(color: Colors.blue, fontStyle: FontStyle.italic)),
+            Text(text),//, style: const TextStyle(color: Colors.blue, fontStyle: FontStyle.italic)),
             const SizedBox(height: 10),
             ElevatedButton(onPressed: () => _changeText(), child: const Text("Click this button"))
           ],
@@ -63,7 +66,6 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         appBar: AppBar(
           title: const Text("Mera app hai ji"),
-          backgroundColor: Colors.black12,
         ),
         body: _bodyWidget()
       );
