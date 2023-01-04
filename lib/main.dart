@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:color_parser/color_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -31,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   String text = "Yaha ka text change hoga";
   Color currentColour = Colors.red;
   String colour = "";
+  String currentColourVisible = "red";
 
   Widget _bodyWidget() {
     return Container(
@@ -63,255 +63,107 @@ class _HomePageState extends State<HomePage> {
   void _changeColour() {
     int randomNum = Random().nextInt(9);
     setState(() {
-      print(ColorParser.color(currentColour).toName()?.toLowerCase());
       if (randomNum == 0) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+        if (colour.toString().toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER);
+        }
+
+        currentColourVisible = "pink";
         currentColour = Colors.pink;
-      } else if (randomNum == 1) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+      }
+      else if (randomNum == 1) {
+        if (colour.toString().toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER);
+        }
+
+        currentColourVisible = "red";
         currentColour = Colors.red;
-      } else if (randomNum == 2) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+      }
+      else if (randomNum == 2) {
+        if (colour.toString().toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+        }
+
+        currentColourVisible = "blue";
         currentColour = Colors.blue;
-      } else if (randomNum == 3) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+      }
+      else if (randomNum == 3) {
+        if (colour.toString().toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+        }
+
+        currentColourVisible = "brown";
         currentColour = Colors.brown;
-      } else if (randomNum == 4) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+      }
+      else if (randomNum == 4) {
+        if (colour.toString().toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+
+        }
+
+        currentColourVisible = "orange";
         currentColour = Colors.orange;
-      } else if (randomNum == 5) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
+      }
+      else if (randomNum == 5) {
+        if (colour.toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+        }
+
+        currentColourVisible = "green";
         currentColour = Colors.green;
-      } else if (randomNum == 6) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour)
-                .toName()
-                .toString()
-                .toLowerCase())) {
-          Fluttertoast.showToast(
-              msg: "Correct!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              //for iOS only
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              //message text color
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!",
-              //message to show toast
-              toastLength: Toast.LENGTH_SHORT,
-              //duration for message to show
-              gravity: ToastGravity.CENTER,
-              //where you want to show, top, bottom
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
+      }
+      else if (randomNum == 6) {
+        if (colour.toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+        }
+
+        currentColourVisible = "white";
         currentColour = Colors.white;
-      } else if (randomNum == 7) {
-        if (colour.toLowerCase() ==
-            (ColorParser.color(currentColour).toName().toString().toLowerCase())) {
-          Fluttertoast.showToast(
-              msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red, textColor: Colors.white,
-              fontSize: 16.0);
-        } else {
-          Fluttertoast.showToast(
-              msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
+      }
+      else if (randomNum == 7) {
+        if (colour.toLowerCase() == currentColourVisible) {
+          Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
         }
+        else {
+          Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1);
+        }
+
+        currentColourVisible = "purple";
         currentColour = Colors.purple;
-      } else if (randomNum == 8) {
-        if (colour.toLowerCase() == ColorParser.color(currentColour).toName()?.toLowerCase()) {
+      }
+      else if (randomNum == 8) {
+        if (colour.toLowerCase() == currentColourVisible) {
           Fluttertoast.showToast(msg: "Correct!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1,
               textColor: Colors.white,
               fontSize: 16.0);
-        } else {
+        }
+        else {
           Fluttertoast.showToast(msg: "INCORRECT!", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1,
               textColor: Colors.white, fontSize: 16.0);
         }
+
+        currentColourVisible = "yellow";
         currentColour = Colors.yellow;
       }
     });
