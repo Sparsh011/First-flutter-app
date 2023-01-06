@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        title: "Mera app hai ji",
+        title: "MyApp",
         home: HomePage(),
     );
   }
